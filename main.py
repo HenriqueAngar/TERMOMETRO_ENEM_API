@@ -1,8 +1,9 @@
 import math
+
 import pandas as pd
-from tensorflow import keras
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from tensorflow import keras
 
 
 def process_requ(inputs):
@@ -47,7 +48,7 @@ def calc_nota(data):
 
 
 application = Flask("termometro_enem")
-cors = CORS(app, resources={
+cors = CORS(application, resources={
             '/predict/*': {"origins": 'https://henriqueangar.github.io'}})
 
 
@@ -62,7 +63,8 @@ def predict_nota():
         response.status_code = 200
         response.headers.add("Access-Control-Allow-Origin",
                              'https://henriqueangar.github.io')
-        response.headers.add('Content-Security-Policy', "upgrade-insecure-requests")
+        response.headers.add('Content-Security-Policy',
+                             "upgrade-insecure-requests")
         return response
 
     except Exception as e:
