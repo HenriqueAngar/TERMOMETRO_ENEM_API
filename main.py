@@ -47,12 +47,14 @@ def calc_nota(data):
     return notas
 
 
-application = Flask("termometro_enem")
-cors = CORS(application, resources={
+
+app = Flask("termometro_enem")
+cors = CORS(app, resources={
+
             '/predict/*': {"origins": 'https://henriqueangar.github.io'}})
 
 
-@application.route('/predict', methods=['GET'])
+@app.route('/predict', methods=['GET'])
 def predict_nota():
 
     try:
@@ -72,4 +74,4 @@ def predict_nota():
         return response_error, 500
 
 
-application.run(host="0.0.0.0", port=8000)
+app.run(host="0.0.0.0", port=8000)
