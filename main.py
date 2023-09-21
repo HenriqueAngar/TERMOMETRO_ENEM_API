@@ -47,11 +47,16 @@ def calc_nota(data):
     return notas
 
 
-
 app = Flask("termometro_enem")
 cors = CORS(app, resources={
 
             '/predict/*': {"origins": 'https://henriqueangar.github.io'}})
+
+
+@app.route('/', methods=['GET'])
+def welcome():
+    html_content = "<html><body><h1>Termômetro do Enem Online</h1><br><br><h2>Nada para ver aqui!</h2></body></html>"
+    return html_content
 
 
 @app.route('/predict', methods=['GET'])
