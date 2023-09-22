@@ -1,4 +1,0 @@
-pandas
-tensorflow
-flask
-flask_cors
