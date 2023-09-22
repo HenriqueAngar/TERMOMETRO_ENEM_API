@@ -1,9 +1,9 @@
 import math
 
+import keras.models as km
 import pandas as pd
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import keras.models as km
 
 
 def process_requ(inputs):
