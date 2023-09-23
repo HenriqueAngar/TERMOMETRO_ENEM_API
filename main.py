@@ -1,9 +1,9 @@
 import math
 
-import keras.models as km
 import pandas as pd
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from tensorflow import keras as km
 
 
 def process_requ(inputs):
@@ -29,7 +29,7 @@ def process_requ(inputs):
     return data
 
 
-model = km.load_model('model.h5')
+model = km.models.load_model('model.h5')
 
 
 def calc_nota(data):
