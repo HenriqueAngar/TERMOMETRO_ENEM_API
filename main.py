@@ -79,4 +79,4 @@ def predict_nota():
         return response_error, 500
 
 
-app.run()
+app.run(host="0.0.0.0")
