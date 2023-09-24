@@ -1,1 +1,1 @@
-gunicorn --bind=0.0.0.0 --timeout 60 main:app
+gunicorn --bind=0.0.0.0 --timeout 20 --workers 1 main:app
